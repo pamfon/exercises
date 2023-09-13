@@ -1,0 +1,42 @@
+/*  InClass1.cs
+ *  A program that simulates the start of an arcade game
+ *  
+ *  Revision History:
+ *      Paulo Medeiros, 2023.09.11: Created
+ *  
+ */
+while (true)
+{
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.Clear();
+
+    String Message = "PRESS ANY KEY TO START";
+    Console.CursorVisible = false;
+    int height = (Console.WindowHeight / 2);
+    int width = (Console.WindowWidth - Message.Length)/2;
+    Console.SetCursorPosition(width, height);
+    Console.WriteLine(Message);
+
+    Console.ReadKey(true);
+
+    for (int i = 3; i > 0; i--)
+    {
+        Console.Clear();
+        Message = ("Game starts in: " + i.ToString());
+        height = (Console.WindowHeight / 2);
+        width = (Console.WindowWidth - Message.Length) / 2;
+        Console.SetCursorPosition(width, height);
+        Console.WriteLine(Message);
+        Thread.Sleep(1000);
+    }
+    Console.BackgroundColor = ConsoleColor.Green;
+    Console.Clear();
+
+    Message = "GO!!!";
+    height = (Console.WindowHeight / 2);
+    width = (Console.WindowWidth - Message.Length) / 2;
+    Console.SetCursorPosition(width, height);
+    Console.WriteLine(Message);
+
+    Thread.Sleep(1000);
+}
